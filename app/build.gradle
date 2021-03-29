@@ -31,6 +31,7 @@ android {
         // should correspond to key/value pairs inside the file
         buildConfigField("String", "BASE_URL", apisProperties['BASE_URL'])
         buildConfigField("String", "IMAGE_BASE_URL", apisProperties['IMAGE_BASE_URL'])
+        buildConfigField("String", "BOOK_WEB_URL", apisProperties['BOOK_WEB_URL'])
     }
 
     buildTypes {
