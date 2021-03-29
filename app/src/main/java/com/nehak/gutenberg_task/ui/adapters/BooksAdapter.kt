@@ -2,12 +2,10 @@ package com.nehak.gutenberg_task.ui.adapters
 
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nehak.gutenberg_task.R
+import com.nehak.gutenberg_task.databinding.ListItemBookBinding
 import com.nehak.gutenberg_task.models.Book
 
 /**
@@ -15,17 +13,23 @@ import com.nehak.gutenberg_task.models.Book
  *
  */
 class BooksAdapter(private val context: Context, private val list: ArrayList<Book>) :
-        RecyclerView.Adapter<BooksAdapter.BookViewHolder>() {
+    RecyclerView.Adapter<BooksAdapter.BookViewHolder>() {
 
-    class BookViewHolder(private val context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class BookViewHolder(
+        private val context: Context,
+        private val listItemBookBinding: ListItemBookBinding
+    ) : RecyclerView.ViewHolder(listItemBookBinding.root) {
         fun bind(book: Book) {
-
+            listItemBookBinding.book = book
+            listItemBookBinding.executePendingBindings()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_book, parent, false)
-        return BookViewHolder(context, view)
+        return BookViewHolder(
+            context,
+            ListItemBookBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
     }
 
     override fun getItemCount(): Int = list.size

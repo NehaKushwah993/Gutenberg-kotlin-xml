@@ -27,7 +27,7 @@ class ListingActivity : AppCompatActivity() {
 
     companion object {
         private const val COLUMN_COUNT: Int = 3;
-        private const val SPACE: Int = 5;
+        private const val SPACE: Int = 15;
     }
 
     private lateinit var binding: ActivityListBinding

@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_width="200dp">
+<layout>
 
-    <ImageView
-        android:id="@+id/iv_cover"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/teal_200"
-        android:contentDescription="@string/iv_cover"
-        app:layout_constraintDimensionRatio="2:3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/teal_200" />
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="0dp"
+    <data>
+
+        <variable
+            name="book"
+            type="com.nehak.gutenberg_task.models.Book" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lines="2"
-        style="@style/default_text_font"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_cover"
-        tools:text="@string/dummy_text" />
+        tools:layout_width="200dp">
 
-    <TextView
-        android:id="@+id/tv_author"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/default_text_font"
-        android:textColor="@color/grey"
-        android:lines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        tools:text="@string/dummy_text" />
+        <ImageView
+            android:id="@+id/iv_cover"
+            imageUrlWithId="@{book.id}"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/iv_cover"
+            app:layout_constraintDimensionRatio="2:3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/teal_200" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/default_text_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="@{book.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cover"
+            tools:text="@string/dummy_text" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            style="@style/default_text_font"
+            authors="@{book.authors}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="@string/dummy_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
