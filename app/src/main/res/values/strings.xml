@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GutenBerg_Task</string>
+    <string name="iv_cover">iv_cover</string>
+    <string name="dummy_text">Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text</string>
 </resources>

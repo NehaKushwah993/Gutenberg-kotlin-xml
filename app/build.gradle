@@ -7,6 +7,14 @@ plugins {
 
 }
 
+def secretPropertiesFile = rootProject.file("secret.properties")
+def secretProperties = new Properties()
+secretProperties.load(new FileInputStream(secretPropertiesFile))
+
+def apisPropertiesFile = rootProject.file("apis.properties")
+def apisProperties = new Properties()
+apisProperties.load(new FileInputStream(apisPropertiesFile))
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -19,6 +27,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // should correspond to key/value pairs inside the file
+        buildConfigField("String", "BASE_URL", apisProperties['BASE_URL'])
     }
 
     buildTypes {
