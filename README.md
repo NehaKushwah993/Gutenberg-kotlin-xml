@@ -1,16 +1,15 @@
 # Gutenberg
 
-Display list of books + Open details page on browser (onclick)
+Displays list of books + Open details page on browser (onclick)
 
 TechStack used :
 
 - ViewModel + Repository structure
-- Flows
-- Coroutines
+- Flows + Coroutines
 - DataBinding
-- Retrofit
 - DaggerHilt
 - Glide
+- Retrofit
 - RecyclerView with GridLayoutManager
 
 
