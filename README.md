@@ -6,6 +6,7 @@ TechStack used :
 
 - ViewModel + Repository structure
 - Flows
+- Coroutines
 - DataBinding
 - Retrofit
 - DaggerHilt
