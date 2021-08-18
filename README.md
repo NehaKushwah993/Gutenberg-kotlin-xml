@@ -11,6 +11,7 @@ TechStack used :
 - Glide
 - Retrofit
 - RecyclerView with GridLayoutManager
+- ConstraintLayout 
 
 
 ![Demo](gutenberg.gif)
